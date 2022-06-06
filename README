@@ -1,0 +1,31 @@
+This layer adds some recipes to boot2qt used for the swupdate talk at qtdevcon 2022. It was tested with:
+MACHINE=verdin-imx8mp
+
+Dependencies
+============
+
+  URI: https://code.qt.io/cgit/yocto/meta-boot2qt.git/
+  branch: 6.3
+
+Table of Contents
+=================
+
+  I. Adding the meta-embear layer to your build
+ II. Building the embear-boot2qt image
+III. Building the embear-boot2qt SDK
+
+
+I. Adding the meta-embear layer to your build
+=================================================
+
+Run 'bitbake-layers add-layer meta-embear'
+
+II. Building the embear-boot2qt image
+========
+
+Run 'bitbake embear-boot2qt-image'
+
+III. Building the embear-boot2qt image
+========
+
+Run 'bitbake embear-boot2qt-image -c populate_sdk'

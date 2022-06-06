@@ -1,0 +1,12 @@
+QT_EDITION = "opensource"
+
+PACKAGE_CLASSES = "package_deb"
+DISTRO_FEATURES:append = " usrmerge"
+IMAGE_INSTALL:append = " ostree swupdate swupdate-www swupdate-client swupdate-progress device-tree-overlays u-boot-distro-boot u-boot-fw-utils u-boot-toradex-env udev-toradex-rules"
+TEZI_USE_BOOTFILES = "false"
+IMAGE_BOOT_FILES = ""
+IMAGE_FSTYPES:remove = "tar.xz teziimg wic.xz wic.gz"
+IMAGE_FSTYPES:append = " tar.zst"
+TOOLCHAIN_TARGET_TASK:remove = "packagegroup-core-ssh-dropbear"
+TOOLCHAIN_HOST_TASK:append = " nativesdk-packagegroup-b2qt-embedded-qt6-toolchain-host"
+PACKAGECONFIG:append:pn-ostree = " static"
